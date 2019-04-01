@@ -1,0 +1,15 @@
+{
+    "name": "parsonswy/pcnstatus",
+    "description": "PeacefulCraft Network Status Checker",
+    "type": "library",
+    "authors": [
+        {
+            "name": "parsonswy",
+            "email": "parsonswy@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "xpaw/php-minecraft-query": "^2.0"
+    }
+}
