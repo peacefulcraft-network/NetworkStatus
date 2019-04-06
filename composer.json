@@ -11,5 +11,10 @@
     "minimum-stability": "stable",
     "require": {
         "xpaw/php-minecraft-query": "^2.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "PCN\\NetworkStatus\\cron\\":"cron/"
+        }
     }
 }
