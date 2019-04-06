@@ -8,7 +8,7 @@ use xPaw\MinecraftPingException;
 class MinecraftQueryCheck extends StatusCheck{
 
     public function addTarget(Server $target){
-        $this->targets[$target->getNode()] = $target;
+        $this->targets[] = $target;
     }
 
     public function run(){
@@ -27,7 +27,7 @@ class MinecraftQueryCheck extends StatusCheck{
 
             }catch(MinecraftPingException $e){
 
-                $this->results[$server->getNode()] =
+                $this->results[] =
                     new MinecraftServerCheckResult(
                         $server->getNode(),
                         false,
