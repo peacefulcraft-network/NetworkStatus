@@ -1,12 +1,18 @@
 <?php
 namespace PCN\NetworkStatus\cron\servers;
 class MinecraftServer implements Server{
+    private $_node;
     private $_ip;
     private $_port;
 
-    public function __construct(String $ip, Int $port){
+    public function __construct(String $node, String $ip, Int $port){
+        $this->_node = $node;
         $this->_ip = $ip;
         $this->_port = $port;
+    }
+
+    public function getNode(){
+        return $this->_node;
     }
 
     public function getIP(){
