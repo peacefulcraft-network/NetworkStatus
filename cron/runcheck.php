@@ -46,7 +46,7 @@ $MineCraftQueryCheck->run();
 $results["Minecraft"] = $MineCraftQueryCheck->getResults();
 
 
-$file = fopen("./endpoints_result.json", "w");
+$file = fopen("../web/template/endpoints_result.json", "w");
 fwrite($file, json_encode($results));
 fclose($file);
 ?>
