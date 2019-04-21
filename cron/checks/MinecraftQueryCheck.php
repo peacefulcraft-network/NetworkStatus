@@ -8,11 +8,7 @@ use xPaw\MinecraftPingException;
 class MinecraftQueryCheck extends StatusCheck{
 
     public function addTarget(Server $target){
-<<<<<<< Updated upstream
-        $this->targets[$target->getNode()] = $target;
-=======
         $this->targets[$target->getName()] = $target;
->>>>>>> Stashed changes
     }
 
     public function run(){
