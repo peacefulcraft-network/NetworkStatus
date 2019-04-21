@@ -24,6 +24,7 @@ for($i=0; $i<count($checks); $i=$i+1){
 
             $MinecraftServer =
                 new \PCN\NetworkStatus\cron\servers\MinecraftServer(
+                    $checks[$i]->name,
                     $checks[$i]->node,
                     $checks[$i]->ip,
                     $test->port
@@ -46,7 +47,7 @@ $MineCraftQueryCheck->run();
 $results["Minecraft"] = $MineCraftQueryCheck->getResults();
 
 
-$file = fopen("./endpoints_result.json", "w");
+$file = fopen("../web/template/endpoints_result.json", "w");
 fwrite($file, json_encode($results));
 fclose($file);
 ?>
