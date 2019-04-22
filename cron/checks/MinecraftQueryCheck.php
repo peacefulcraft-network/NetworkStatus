@@ -8,28 +8,31 @@ use xPaw\MinecraftPingException;
 class MinecraftQueryCheck extends StatusCheck{
 
     public function addTarget(Server $target){
-        $this->targets[] = $target;
+        $this->targets[$target->getName()] = $target;
     }
 
     public function run(){
         foreach($this->targets as $server){
 
+            if(!isset($this->results[$server->getNode()]))
+                $this->results[$server->getNode()] = array();
+
             try{
 
                 $Query = new MinecraftPing($server->getIP(), $server->getPort());
                 $QueryResult = $Query->Query();
-                $this->results[$server->getNode()] =
+                $this->results[$server->getNode()][] =
                     new MinecraftServerCheckResult(
-                        $server->getNode(),
+                        $server->getName(),
                         true,
                         $QueryResult["players"]["online"]
                     );
 
             }catch(MinecraftPingException $e){
 
-                $this->results[] =
+                $this->results[$server->getNode()][] =
                     new MinecraftServerCheckResult(
-                        $server->getNode(),
+                        $server->getName(),
                         false,
                         0
                     );

@@ -7,15 +7,15 @@ class MinecraftServerCheckResult extends CheckResult{
     private $_usersOnline;
         public function usersOnline(){ return $this->_usersOnline; }
 
-    public function __construct(string $node, bool $online, int $usersOnline){
-        $this->node = $node;
+    public function __construct(string $name, bool $online, int $usersOnline){
+        $this->name = $name;
         $this->result = $online;
         $this->_usersOnline = $usersOnline;
     }
 
     public function jsonSerialize(){
         return [
-                "node"=>$this->node,
+                "name"=>$this->name,
                 "online"=>$this->result,
                 "usersOnline"=>$this->_usersOnline,
                 ];

@@ -24,6 +24,7 @@ for($i=0; $i<count($checks); $i=$i+1){
 
             $MinecraftServer =
                 new \PCN\NetworkStatus\cron\servers\MinecraftServer(
+                    $test->name,
                     $checks[$i]->node,
                     $checks[$i]->ip,
                     $test->port
