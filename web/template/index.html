@@ -1,18 +1,72 @@
 <html>
     <head>
         <style type="text/css">
-             div.gameSection{
-                 display:block;
-                 margin:0px;
-                 background-color: #AAA;
-                 text-align: center;
-             }
+            html{
+                background-color: black;
+                font-size: 18;
+                font-family: COURIER;
+                color:#DDD;
+            }
+
+            div.header{
+                text-align: center;
+            }
+
+            div.gameSection{
+                display:block;
+                width:800px;
+                height:auto;
+                margin:auto;
+                background-color: #111;
+                text-align: center;
+            }
+
+            div.nodeSection{
+                display:block;
+                margin:10px;
+
+            }
+
+                span.nodeHeaderLeft{
+                    float:left;
+                }
+
+                span.nodeHeaderRight{
+                    float:right;
+                }
+
+            #status_display{
+                margin:20px;
+                background-color: #222;
+                width:750px;
+            }
+
+            td{
+                padding:4px;
+            }
+
+            td.target{
+                width:84%;
+            }
+
+            td.result{
+                width:auto;
+            }
+            font.offline{ padding: 2px; background-color: red; border-radius: 2px;}
+            font.slow{padding: 2px; background-color: orange; border-radius: 2px;}
+            font.online{padding: 2px; background-color: green; border-radius: 2px;}
+            font.unknown{padding: 2px; background-color: gray; border-radius: 2px;}
         </style>
     </head>
     <body>
-        <div class="gameSection">
-            Game section
+        <div class="header">
+            <h1>PeacefulCraft Network Status</h1>
+        </div>
+
+        <div class="gameSection" id="MCInfra">
+
         </div>
 
     </body>
+    <script type="text/javascript" src="./index.js"></script>
 </html>

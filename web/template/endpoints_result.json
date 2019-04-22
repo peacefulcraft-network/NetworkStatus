@@ -1,0 +1,36 @@
+{
+    "timestamp":1555892796,
+    "Minecraft":{
+        "n0.peacefulcraft.net":[
+            {
+                "name":"BungeeCord",
+                "online":false,
+                "usersOnline":0
+            }
+        ],
+        "n1.peacefulcraft.net":[
+            {
+                "name":"PvE",
+                "online":true,
+                "usersOnline":6
+            }
+        ],
+        "n2.peacefulcraft.net":[
+            {
+                "name":"Minigames",
+                "online":true,
+                "usersOnline":0
+            },
+            {
+                "name":"TrenchDev",
+                "online":true,
+                "usersOnline":0
+            },
+            {
+                "name":"PluginTest",
+                "online":true,
+                "usersOnline":0
+            }
+        ]
+    }
+}
