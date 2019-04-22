@@ -14,20 +14,23 @@ class MinecraftQueryCheck extends StatusCheck{
     public function run(){
         foreach($this->targets as $server){
 
+            if(!isset($this->results[$server->getNode()]))
+                $this->results[$server->getNode()] = array();
+
             try{
 
                 $Query = new MinecraftPing($server->getIP(), $server->getPort());
                 $QueryResult = $Query->Query();
-                $this->results[$server->getNode() . ":" . $server->getPort()] =
+                $this->results[$server->getNode()][] =
                     new MinecraftServerCheckResult(
-                        $server_>getName(),
+                        $server->getName(),
                         true,
                         $QueryResult["players"]["online"]
                     );
 
             }catch(MinecraftPingException $e){
 
-                $this->results[$server->getNode()] =
+                $this->results[$server->getNode()][] =
                     new MinecraftServerCheckResult(
                         $server->getName(),
                         false,
