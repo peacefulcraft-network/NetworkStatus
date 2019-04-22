@@ -1,0 +1,29 @@
+############################################
+THIS IS ONLY A TEMPLATE. THE RULE endpoints.json FILE
+SHOULD GO UNDER /cron/endpoints.json AND BE POPULATED
+WITH YOUR SPECIFIC CHECKS.
+
+COPY EVERYTHING BELOW THE ### LINE TO GET STARTED
+############################################
+[
+    {
+        "node":"Host Server 1",
+        "desc":"Primary Game Server",
+        "ip":"svr1.mygameservernetwork.tld",
+        "tests":[
+            {"type":"icmp_ping", "port":""},
+            {"name":"Minecraft", "type":"minecraft_ping", "port":"25565"},
+            {"type":"linux_load"}
+        ]
+    },
+    {
+        "node":"Host Server 2",
+        "desc":"Web Server",
+        "ip":"svr2.mygameservernetwork.tld",
+        "tests":[
+            {"type":"icmp_ping", "port":""},
+            {"type":"mysql_ping", "port":""},
+            {"type":"linux_load"}
+        ]
+    }
+]
